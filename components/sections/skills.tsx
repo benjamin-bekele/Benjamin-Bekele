@@ -9,8 +9,8 @@ const skillCategories = [
     skills: [
       { name: "Flutter", level: 95 },
       { name: "Dart", level: 92 },
+      { name: "React Native", level: 78 },
       { name: "Firebase", level: 88 },
-      { name: "Supabase", level: 82 },
     ],
   },
   {
@@ -18,7 +18,7 @@ const skillCategories = [
     skills: [
       { name: "React.js", level: 85 },
       { name: "Next.js", level: 83 },
-      { name: "JavaScript", level: 90 },
+      { name: "TypeScript", level: 85 },
       { name: "Tailwind CSS", level: 88 },
     ],
   },
@@ -27,31 +27,32 @@ const skillCategories = [
     skills: [
       { name: "Node.js", level: 85 },
       { name: "Express.js", level: 82 },
-      { name: "PHP", level: 75 },
-      { name: "SQL", level: 80 },
+      { name: "WebSockets", level: 80 },
+      { name: "PHP / Symfony", level: 75 },
     ],
   },
   {
-    title: "Other",
+    title: "Languages & Data",
     skills: [
+      { name: "JavaScript", level: 90 },
       { name: "Python", level: 78 },
-      { name: "Bootstrap", level: 80 },
-      { name: "Problem Solving", level: 95 },
-      { name: "Git & DevOps", level: 82 },
+      { name: "C++", level: 72 },
+      { name: "SQL / PostgreSQL", level: 82 },
     ],
   },
 ]
 
 const allTech = [
-  "Flutter", "Dart", "Firebase", "Supabase", "SQL", "PHP",
-  "JavaScript", "Node.js", "Express.js", "Next.js", "React.js",
-  "Tailwind CSS", "Bootstrap", "Python", "Git", "REST APIs", "UI/UX", "Agile",
+  "Flutter", "Dart", "Firebase", "Supabase", "MySQL", "PostgreSQL", "MariaDB",
+  "JavaScript", "TypeScript", "Node.js", "Express.js", "Next.js", "React.js",
+  "React Native", "Tailwind CSS", "PHP", "Symfony", "Python", "C++",
+  "WebSockets", "REST APIs", "TensorFlow", "Git",
 ]
 
 export function SkillsSection() {
   return (
     <section id="skills" className="px-6 py-24 lg:py-32">
-      <div className="mx-auto max-w-6xl">
+      <div suppressHydrationWarning className="mx-auto max-w-6xl">
         <SectionHeading title="Skills & Expertise" subtitle="What I Know" />
 
         <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
@@ -77,9 +78,9 @@ export function SkillsSection() {
 
         <FadeIn delay={200} className="mt-20">
           <div className="border-t border-border pt-12">
-            <p className="mb-8 text-xs font-semibold uppercase tracking-[0.25em] text-primary">
+            <div className="mb-8 text-xs font-semibold uppercase tracking-[0.25em] text-primary">
               Technologies
-            </p>
+            </div>
             <div className="flex flex-wrap gap-3">
               {allTech.map((tech) => (
                 <span

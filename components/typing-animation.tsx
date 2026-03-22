@@ -11,6 +11,11 @@ export function TypingAnimation({ texts, className }: TypingAnimationProps) {
   const [displayText, setDisplayText] = useState("")
   const [textIndex, setTextIndex] = useState(0)
   const [isDeleting, setIsDeleting] = useState(false)
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   const tick = useCallback(() => {
     const current = texts[textIndex]
@@ -32,10 +37,15 @@ export function TypingAnimation({ texts, className }: TypingAnimationProps) {
   }, [displayText, isDeleting, textIndex, texts])
 
   useEffect(() => {
+    if (!mounted) return
     const speed = isDeleting ? 35 : 70
     const timer = setTimeout(tick, speed)
     return () => clearTimeout(timer)
-  }, [tick, isDeleting])
+  }, [tick, isDeleting, mounted])
+
+  if (!mounted) {
+    return <span className={className}>&nbsp;</span>
+  }
 
   return (
     <span className={className}>

@@ -17,8 +17,14 @@ export function FadeIn({
 }: FadeInProps) {
   const ref = useRef<HTMLDivElement>(null)
   const [visible, setVisible] = useState(false)
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  useEffect(() => {
+    if (!mounted) return
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -30,7 +36,7 @@ export function FadeIn({
     )
     if (ref.current) observer.observe(ref.current)
     return () => observer.disconnect()
-  }, [])
+  }, [mounted])
 
   const animations: Record<string, string> = {
     up: "animate-fade-up",
@@ -42,8 +48,9 @@ export function FadeIn({
   return (
     <div
       ref={ref}
+      suppressHydrationWarning
       className={`${visible ? animations[direction] : "opacity-0"} ${className}`}
-      style={{ animationDelay: `${delay}ms`, animationFillMode: "both" }}
+      style={visible ? { animationDelay: `${delay}ms`, animationFillMode: "both" } : undefined}
     >
       {children}
     </div>

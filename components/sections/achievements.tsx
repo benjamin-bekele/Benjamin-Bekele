@@ -6,7 +6,7 @@ import { FadeIn } from "@/components/fade-in"
 const achievements = [
   { value: 3, suffix: "+", label: "Years Experience" },
   { value: 15, suffix: "+", label: "Projects Completed" },
-  { value: 2000, suffix: "+", label: "Users Served" },
+  { value: 1800, suffix: "+", label: "Users Served" },
   { value: 7, suffix: "+", label: "Real-world Platforms" },
 ]
 
@@ -52,7 +52,7 @@ function CountUp({ target, suffix }: { target: number; suffix: string }) {
 export function AchievementsSection() {
   return (
     <section id="achievements" className="px-6 py-24 lg:py-32">
-      <div className="mx-auto max-w-6xl">
+      <div suppressHydrationWarning className="mx-auto max-w-6xl">
         <FadeIn>
           <div className="border-t border-b border-border py-16">
             <div className="grid grid-cols-2 gap-12 lg:grid-cols-4">
@@ -62,9 +62,9 @@ export function AchievementsSection() {
                     <div className="font-serif text-4xl text-foreground md:text-5xl lg:text-6xl">
                       <CountUp target={item.value} suffix={item.suffix} />
                     </div>
-                    <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
+                    <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
                       {item.label}
-                    </p>
+                    </div>
                   </div>
                 </FadeIn>
               ))}

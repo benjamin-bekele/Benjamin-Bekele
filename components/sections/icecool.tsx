@@ -10,7 +10,7 @@ const pillars = [
     icon: BookOpen,
     title: "Open Source First",
     description:
-      "All content and code are open-source. Anyone can contribute, improve, and translate. Built on transparency and collaboration.",
+      "All contents are open-source. Anyone can contribute, improve, and translate. Built on transparency and collaboration.",
   },
   {
     icon: GraduationCap,
@@ -42,7 +42,7 @@ const symbolism = [
 export function IcecoolSection() {
   return (
     <section id="icecool" className="bg-secondary px-6 py-24 lg:py-32">
-      <div className="mx-auto max-w-6xl">
+      <div suppressHydrationWarning className="mx-auto max-w-6xl">
         <SectionHeading 
           title="ICECOOL" 
           subtitle="Nonprofit Academic Movement" 
@@ -62,28 +62,28 @@ export function IcecoolSection() {
                 </div>
                 <div>
                   <h3 className="font-serif text-3xl text-foreground">ICECOOL</h3>
-                  <p className="text-xs uppercase tracking-wider text-muted-foreground">
+                  <div className="text-xs uppercase tracking-wider text-muted-foreground">
                     Interconnected Curriculum-based Education for 
-                  </p>
-                  <p className="text-xs uppercase tracking-wider text-muted-foreground">
-                    Collaboration & Open-source Online Learning
-                  </p>
+                  </div>
+                  <div className="text-xs uppercase tracking-wider text-muted-foreground">
+                    Collaboration & Open Online Learning
+                  </div>
                 </div>
               </div>
             </div>
             <div className="lg:flex-1">
-              <p className="mb-4 text-base leading-relaxed text-muted-foreground">
-                ICECOOL is a nonprofit, open-source, inter-university educational platform 
+              <div className="mb-4 text-base leading-relaxed text-muted-foreground">
+                ICECOOL is a nonprofit, inter-university educational platform 
                 created to unify, improve, and democratize university education in Ethiopia 
                 through collaboration.
-              </p>
-              <p className="text-base leading-relaxed text-muted-foreground">
+              </div>
+              <div className="text-base leading-relaxed text-muted-foreground">
                 At its core, ICECOOL brings together students and universities to build 
                 high-quality, curriculum-aligned courses based on official university learning 
                 outcomes and syllabi. Instead of fragmented notes and unequal access, ICECOOL 
                 creates a shared academic commons where knowledge is refined collectively and 
                 shared freely.
-              </p>
+              </div>
             </div>
           </div>
         </FadeIn>
@@ -94,27 +94,27 @@ export function IcecoolSection() {
             <div className="grid gap-4 md:grid-cols-2">
               <div className="flex gap-3">
                 <span className="text-primary">📚</span>
-                <p className="text-sm text-muted-foreground">Provides clean, structured university-level courses</p>
+                <div className="text-sm text-muted-foreground">Provides clean, structured university-level courses</div>
               </div>
               <div className="flex gap-3">
                 <span className="text-primary">🏛️</span>
-                <p className="text-sm text-muted-foreground">Aligns content with official curricula</p>
+                <div className="text-sm text-muted-foreground">Aligns content with official curricula</div>
               </div>
               <div className="flex gap-3">
                 <span className="text-primary">🤝</span>
-                <p className="text-sm text-muted-foreground">Enables inter-university collaboration</p>
+                <div className="text-sm text-muted-foreground">Enables inter-university collaboration</div>
               </div>
               <div className="flex gap-3">
                 <span className="text-primary">🧑</span>
-                <p className="text-sm text-muted-foreground">Empowers students as co-creators of knowledge</p>
+                <div className="text-sm text-muted-foreground">Empowers students as co-creators of knowledge</div>
               </div>
               <div className="flex gap-3">
                 <span className="text-primary">🎮</span>
-                <p className="text-sm text-muted-foreground">Enhances learning through Q&A, quizzes, and games</p>
+                <div className="text-sm text-muted-foreground">Enhances learning through Q&A, quizzes, and games</div>
               </div>
               <div className="flex gap-3">
                 <span className="text-primary">🔓</span>
-                <p className="text-sm text-muted-foreground">Keeps all content open-source and free</p>
+                <div className="text-sm text-muted-foreground">Keeps all content open and free</div>
               </div>
             </div>
           </div>
@@ -131,9 +131,9 @@ export function IcecoolSection() {
                 <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground">
                   {pillar.title}
                 </h3>
-                <p className="text-sm leading-relaxed text-muted-foreground">
+                <div className="text-sm leading-relaxed text-muted-foreground">
                   {pillar.description}
-                </p>
+                </div>
               </div>
             </FadeIn>
           ))}
@@ -143,19 +143,19 @@ export function IcecoolSection() {
           <div className="mb-16 grid gap-8 md:grid-cols-2">
             <div className="rounded-lg border border-border bg-card p-8">
               <h3 className="mb-4 text-lg font-semibold text-foreground">Mission</h3>
-              <p className="text-sm leading-relaxed text-muted-foreground">
-                To build a nonprofit, open-source, inter-university educational platform that 
+              <div className="text-sm leading-relaxed text-muted-foreground">
+                To build a nonprofit, inter-university educational platform that 
                 provides high-quality, curriculum-aligned university courses, collaboratively 
                 created by students and academics, and freely accessible to all.
-              </p>
+              </div>
             </div>
             <div className="rounded-lg border border-border bg-card p-8">
               <h3 className="mb-4 text-lg font-semibold text-foreground">Vision</h3>
-              <p className="text-sm leading-relaxed text-muted-foreground">
+              <div className="text-sm leading-relaxed text-muted-foreground">
                 A future where universities collaborate instead of operating in isolation, 
                 students learn from shared refined resources, and quality education is 
                 accessible regardless of location or income.
-              </p>
+              </div>
             </div>
           </div>
         </FadeIn>
@@ -167,7 +167,7 @@ export function IcecoolSection() {
               {symbolism.map((item) => (
                 <div key={item.label} className="flex flex-col items-center gap-3 text-center">
                   <item.icon className="h-8 w-8 text-primary" strokeWidth={1.5} />
-                  <p className="text-xs text-muted-foreground">{item.label}</p>
+                  <div className="text-xs text-muted-foreground">{item.label}</div>
                 </div>
               ))}
             </div>
@@ -176,16 +176,16 @@ export function IcecoolSection() {
 
         <FadeIn delay={800}>
           <div className="rounded-lg border border-primary/20 bg-card p-8 text-center">
-            <p className="mb-4 text-lg font-semibold text-foreground">
+            <div className="mb-4 text-lg font-semibold text-foreground">
               Participating Universities
-            </p>
-            <p className="text-sm text-muted-foreground">
+            </div>
+            <div className="text-sm text-muted-foreground">
               Hope University • Saint Mary University • Admas University • Commerce College • 
               Regional Universities (Hawassa, Jimma, Mekelle, and more)
-            </p>
-            <p className="mt-6 text-base font-medium italic text-primary">
+            </div>
+            <div className="mt-6 text-base font-medium italic text-primary">
               "Knowledge grows when shared. Education improves when unified. Students succeed when empowered."
-            </p>
+            </div>
           </div>
         </FadeIn>
       </div>

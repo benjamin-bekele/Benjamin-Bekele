@@ -34,29 +34,29 @@ const highlights = [
 export function AboutSection() {
   return (
     <section id="about" className="px-6 py-24 lg:py-32">
-      <div className="mx-auto max-w-6xl">
+      <div suppressHydrationWarning className="mx-auto max-w-6xl">
         <SectionHeading title="About Me" subtitle="Who I Am" />
 
         <div className="flex flex-col gap-16 lg:flex-row lg:gap-24">
           <FadeIn direction="left" className="flex-1">
             <div className="flex flex-col gap-6">
-              <p className="font-serif text-2xl leading-relaxed text-foreground md:text-3xl">
+              <div className="font-serif text-2xl leading-relaxed text-foreground md:text-3xl">
                 I am a highly ambitious software Developer and startup founder
                 building impactful software products.
-              </p>
+              </div>
               <div className="h-px w-8 bg-primary" />
-              <p className="text-base leading-relaxed text-muted-foreground">
+              <div className="text-base leading-relaxed text-muted-foreground">
                 As the founder of ICECOOL, I lead the development of innovative
                 solutions that address real-world challenges. With deep expertise
                 in Flutter, mobile development, and full-stack engineering, I bring
                 ideas to life through clean code and thoughtful design.
-              </p>
-              <p className="text-base leading-relaxed text-muted-foreground">
+              </div>
+              <div className="text-base leading-relaxed text-muted-foreground">
                 My entrepreneurial spirit drives me to constantly explore new
                 technologies and push the boundaries of software development. I
                 believe in the power of technology to transform lives and
                 industries.
-              </p>
+              </div>
             </div>
           </FadeIn>
 
@@ -70,9 +70,9 @@ export function AboutSection() {
                   <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground">
                     {item.title}
                   </h3>
-                  <p className="text-sm leading-relaxed text-muted-foreground">
+                  <div className="text-sm leading-relaxed text-muted-foreground">
                     {item.description}
-                  </p>
+                  </div>
                 </div>
               </FadeIn>
             ))}

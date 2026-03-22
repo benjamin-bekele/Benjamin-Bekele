@@ -10,7 +10,7 @@ const socialLinks = [
   },
   {
     name: "LinkedIn",
-    href: "https://linkedin.com/in/benjaminmenedo",
+    href: "https://linkedin.com/in/benjamin-menedo",
     icon: Linkedin,
   },
   {
@@ -33,15 +33,15 @@ const socialLinks = [
 export function Footer() {
   return (
     <footer className="border-t border-border px-6 py-16">
-      <div className="mx-auto flex max-w-6xl flex-col gap-10">
+      <div suppressHydrationWarning className="mx-auto flex max-w-6xl flex-col gap-10">
         <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
           <div className="flex flex-col gap-2">
             <span className="font-serif text-lg text-foreground">
               Benjamin Bekele
             </span>
-            <p className="text-sm text-muted-foreground">
+            <div className="text-sm text-muted-foreground">
               Software Developer & Startup Founder
-            </p>
+            </div>
           </div>
 
           <div className="flex gap-5">
@@ -61,12 +61,12 @@ export function Footer() {
         </div>
 
         <div className="flex flex-col items-start justify-between gap-4 border-t border-border pt-8 md:flex-row md:items-center">
-          <p className="text-xs text-muted-foreground">
+          <div className="text-xs text-muted-foreground">
             {`Designed & Built by Benjamin Bekele`}
-          </p>
-          <p className="font-mono text-xs text-muted-foreground/60">
+          </div>
+          <div className="font-mono text-xs text-muted-foreground/60">
             {`\u00A9 ${new Date().getFullYear()} All rights reserved.`}
-          </p>
+          </div>
         </div>
       </div>
     </footer>

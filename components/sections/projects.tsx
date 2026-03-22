@@ -6,43 +6,67 @@ import { FadeIn } from "@/components/fade-in"
 
 const projects = [
   {
-    title: "ICECOOL Mobile App",
+    title: "ICECOOL — Open Learning Platform",
     description:
-      "A feature-rich mobile application for the ICECOOL startup, delivering seamless user experiences with Flutter and Firebase integration.",
-    tags: ["Flutter", "Dart", "Firebase", "REST API"],
+      "Scalable, free, open platform for personalized university learning. Built full-stack with structured courses, quizzes, flashcards, and collaborative features. Enables student-generated content and inter-university collaboration.",
+    tags: ["Flutter", "PHP", "Supabase", "Firebase", "MySQL"],
     number: "01",
     github: "https://github.com/benjamin-bekele/icecool",
   },
   {
-    title: "Poker Hand Evaluator",
+    title: "Juego — Arcade Management System",
     description:
-      "An intelligent app that evaluates poker hands in real-time, featuring advanced algorithms and a sleek, intuitive interface.",
-    tags: ["Flutter", "Dart", "Algorithms", "UI/UX"],
+      "Real-world system for managing arcade/game zone operations. Built session tracking, billing (daily/weekly), and analytics dashboard with admin control panel for real-time monitoring.",
+    tags: ["React", "Node.js", "MySQL"],
     number: "02",
-    github: "https://github.com/benjamin-bekele/poker-hand-evaluator",
-  },
-  {
-    title: "Juego Game Zone SaaS",
-    description:
-      "A comprehensive SaaS platform for gaming zones with booking management, analytics dashboard, and payment integration.",
-    tags: ["Next.js", "React", "Node.js", "Supabase"],
-    number: "03",
     github: "https://github.com/benjamin-bekele/juego",
   },
   {
-    title: "Portfolio Website",
+    title: "Gebeta Digital Menu — NFC Ordering System",
     description:
-      "A modern personal portfolio website with smooth animations, editorial design, and responsive layouts across all devices.",
-    tags: ["Next.js", "Tailwind CSS", "TypeScript"],
+      "NFC-based digital restaurant system with live order processing. Supports 11+ international languages, real-time WebSocket communication, and table-based order routing directly to the kitchen.",
+    tags: ["React", "Tailwind CSS", "Node.js", "WebSockets", "PostgreSQL"],
+    number: "03",
+    github: "https://github.com/benjamin-bekele",
+  },
+  {
+    title: "Ethio Exam — Exam Preparation Platform",
+    description:
+      "Platform providing 13+ years of university entrance exam materials. Structured large datasets for easy access with a focus on accessibility and usability.",
+    tags: ["Flutter", "Supabase", "Markdown"],
     number: "04",
-    github: "https://github.com/benjamin-bekele/personal-website",
+    github: "https://github.com/benjamin-bekele",
+  },
+  {
+    title: "MicroLearning Platform",
+    description:
+      "Content-rich learning platform with 24+ subjects and 100–200 topics each. Scalable architecture for large educational datasets with integrated quizzes and structured notes.",
+    tags: ["React", "Tailwind CSS", "Firebase", "Markdown"],
+    number: "05",
+    github: "https://github.com/benjamin-bekele",
+  },
+  {
+    title: "Poker Hand Evaluator",
+    description:
+      "System to evaluate poker hands using Texas Hold'em rules. Built a logic engine to analyze hand strength in real time using rule-based evaluation and probability thinking.",
+    tags: ["Flutter", "Dart", "Algorithms"],
+    number: "06",
+    github: "https://github.com/benjamin-bekele/poker-hand-evaluator",
+  },
+  {
+    title: "Bible Creed — Trivia & Quiz Platform",
+    description:
+      "Interactive biblical quiz system with thematic and timed challenges. Dynamic quiz engine based on categories and themes, covering the full biblical dataset across books, testaments, and themes.",
+    tags: ["Flutter", "Dart"],
+    number: "07",
+    github: "https://github.com/benjamin-bekele",
   },
 ]
 
 export function ProjectsSection() {
   return (
     <section id="projects" className="px-6 py-24 lg:py-32">
-      <div className="mx-auto max-w-6xl">
+      <div suppressHydrationWarning className="mx-auto max-w-6xl">
         <SectionHeading title="Selected Work" subtitle="Projects" />
 
         <div className="flex flex-col">
@@ -65,9 +89,9 @@ export function ProjectsSection() {
                     </h3>
                   </div>
                   <div className="flex max-w-sm flex-col gap-4 lg:text-right">
-                    <p className="text-sm leading-relaxed text-muted-foreground lg:text-left">
+                    <div className="text-sm leading-relaxed text-muted-foreground lg:text-left">
                       {project.description}
-                    </p>
+                    </div>
                     <div className="flex flex-wrap gap-2 lg:justify-start">
                       {project.tags.map((tag) => (
                         <span

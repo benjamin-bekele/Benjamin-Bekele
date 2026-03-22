@@ -8,23 +8,16 @@ const experience = [
   {
     role: "Founder & Lead Developer",
     company: "ICECOOL",
-    period: "2025 - Present",
+    period: "Dec 2025 - Present",
     description:
       "Leading product development, managing developing teams, and driving strategic decisions for the company's software portfolio.",
   },
   {
-    role: "Flutter Developer",
-    company: "Freelance",
+    role: "Independent Software Developer",
+    company: "Self-Directed Projects",
     period: "2024 - Present",
     description:
-      "Developing cross-platform mobile applications for clients worldwide, specializing in Flutter and Firebase/Supabase integrations.",
-  },
-  {
-    role: "Full-Stack Engineer",
-    company: "Various Projects",
-    period: "2024 - Present",
-    description:
-      "Built web applications using React, TailwindCSS, Next.js, Node.js, Express, MySQL, FastAPI, PostgreSQL and PHP with database design and API development.",
+      "Building full-stack and mobile products as startup-potential ventures — each project designed with real-world scalability, user impact, and product vision in mind rather than client work.",
   },
 ]
 
@@ -41,7 +34,7 @@ const education = [
 export function ResumeSection() {
   return (
     <section id="resume" className="bg-secondary px-6 py-24 lg:py-32">
-      <div className="mx-auto max-w-6xl">
+      <div suppressHydrationWarning className="mx-auto max-w-6xl">
         <SectionHeading title="Experience" subtitle="Resume" />
 
         <div className="grid grid-cols-1 gap-16 lg:grid-cols-5">
@@ -64,12 +57,12 @@ export function ResumeSection() {
                         {item.period}
                       </span>
                     </div>
-                    <p className="text-sm font-medium text-primary">
+                    <div className="text-sm font-medium text-primary">
                       {item.company}
-                    </p>
-                    <p className="text-sm leading-relaxed text-muted-foreground">
+                    </div>
+                    <div className="text-sm leading-relaxed text-muted-foreground">
                       {item.description}
-                    </p>
+                    </div>
                   </div>
                 ))}
               </div>
@@ -92,18 +85,19 @@ export function ResumeSection() {
                         {item.period}
                       </span>
                     </div>
-                    <p className="text-sm font-medium text-primary">
+                    <div className="text-sm font-medium text-primary">
                       {item.school}
-                    </p>
-                    <p className="text-sm leading-relaxed text-muted-foreground">
+                    </div>
+                    <div className="text-sm leading-relaxed text-muted-foreground">
                       {item.description}
-                    </p>
+                    </div>
                   </div>
                 ))}
 
                 <div className="mt-4">
                   <a
-                    href="#"
+                    href="/BENJAMIN BEKELE.pdf"
+                    download="BENJAMIN BEKELE.pdf"
                     className="group inline-flex items-center gap-2 bg-foreground px-6 py-3 text-sm font-medium text-background transition-all hover:bg-primary"
                   >
                     <Download className="h-4 w-4" />

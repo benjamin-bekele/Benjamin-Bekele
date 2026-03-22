@@ -29,6 +29,7 @@ export function Navigation() {
 
   return (
     <header
+      suppressHydrationWarning
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
         scrolled
@@ -44,7 +45,7 @@ export function Navigation() {
           Benjamin Bekele
         </a>
 
-        <div className="hidden items-center gap-8 md:flex">
+        <div suppressHydrationWarning className="hidden items-center gap-8 md:flex">
           {navLinks.map((link) => (
             <a
               key={link.href}
@@ -55,35 +56,31 @@ export function Navigation() {
               <span className="absolute -bottom-1 left-0 h-px w-0 bg-primary transition-all duration-300 group-hover:w-full" />
             </a>
           ))}
-          {mounted && (
-            <button
-              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              className="rounded-full p-2 text-muted-foreground transition-colors hover:text-foreground"
-              aria-label="Toggle theme"
-            >
-              {theme === "dark" ? (
-                <Sun className="h-4 w-4" />
-              ) : (
-                <Moon className="h-4 w-4" />
-              )}
-            </button>
-          )}
+          <button
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            className={cn("rounded-full p-2 text-muted-foreground transition-colors hover:text-foreground", !mounted && "invisible")}
+            aria-label="Toggle theme"
+          >
+            {mounted && theme === "dark" ? (
+              <Sun className="h-4 w-4" />
+            ) : (
+              <Moon className="h-4 w-4" />
+            )}
+          </button>
         </div>
 
-        <div className="flex items-center gap-3 md:hidden">
-          {mounted && (
-            <button
-              onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-              className="rounded-full p-2 text-muted-foreground transition-colors hover:text-foreground"
-              aria-label="Toggle theme"
-            >
-              {theme === "dark" ? (
-                <Sun className="h-4 w-4" />
-              ) : (
-                <Moon className="h-4 w-4" />
-              )}
-            </button>
-          )}
+        <div suppressHydrationWarning className="flex items-center gap-3 md:hidden">
+          <button
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+            className={cn("rounded-full p-2 text-muted-foreground transition-colors hover:text-foreground", !mounted && "invisible")}
+            aria-label="Toggle theme"
+          >
+            {mounted && theme === "dark" ? (
+              <Sun className="h-4 w-4" />
+            ) : (
+              <Moon className="h-4 w-4" />
+            )}
+          </button>
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
             className="rounded-full p-2 text-muted-foreground transition-colors hover:text-foreground"

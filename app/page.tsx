@@ -10,12 +10,13 @@ import { BlogSection } from "@/components/sections/blog"
 import { ResumeSection } from "@/components/sections/resume"
 import { ContactSection } from "@/components/sections/contact"
 import { Footer } from "@/components/sections/footer"
+import { ClientMain } from "@/components/client-main"
 
 export default function Home() {
   return (
     <>
       <Navigation />
-      <main>
+      <ClientMain>
         <HeroSection />
         <AboutSection />
         <ProjectsSection />
@@ -26,7 +27,7 @@ export default function Home() {
         <BlogSection />
         <ResumeSection />
         <ContactSection />
-      </main>
+      </ClientMain>
       <Footer />
     </>
   )
